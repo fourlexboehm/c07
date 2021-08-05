@@ -4,7 +4,7 @@
 int	ft_ultimate_range(int **range, int min, int max)
 {
 	int	i;
-	int length;
+	int	length;
 
 	length = max - min;
 	if (min >= max)
@@ -12,32 +12,36 @@ int	ft_ultimate_range(int **range, int min, int max)
 		*range = 0;
 		return (0);
 	}
-	*range = (int *) malloc((max - min) * 4);
+	*range = (int *) malloc(length * 4 + 1);
 	if (!range)
 		return (-1);
 	i = 0;
 	while (min < max)
-		*range[i++] = min++;
+		range[0][i++] = min++;
 	*range[i] = '\0';
-	return (**range);
+	return (length);
 }
-
+/*
 int	main(int ac, char **av)
 {
-	int	*p;
 	int	i;
-	int range; 
+	int forange;
 	int *range2;
-	p = NULL;
+	int **range;
+	int length;
+	
+	forange = 19;
+	range2 = &forange;
+	range = &range2;
 
-		
-	range2 = &range;
 	i = 0;
-	*p = ft_ultimate_range(&range2, atoi(av[1]), atoi(av[2]));
+	length = ft_ultimate_range(range, atoi(av[1]), atoi(av[2]));
 	if (ac >= 0)
 	{
-		while (p[i])
-			printf("%d\n", p[i++]);
+		printf("%d\n%d", length, i);
+//		while (*range[i])
+//			printf("%d\n", *range[i++]);
 	}
 	return (0);
 }
+*/

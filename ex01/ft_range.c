@@ -25,7 +25,10 @@ int	main(int ac, char **av)
 
 	i = 0;
 	p = ft_range(atoi(av[1]), atoi(av[2]));
-	while (p[i])
-		printf("%d\n", p[i++]);
-	return (0);
+	if (ac > 0)
+	{	
+		while (p[i])
+			printf("%d\n", p[i++]);
+		return (0);
+	}
 }
