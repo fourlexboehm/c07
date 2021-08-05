@@ -17,7 +17,7 @@ int	*ft_range(int min, int max)
 	array[i] = '\0';
 	return (array);
 }
-
+/*
 int	main(int ac, char **av)
 {
 	int	*p;
@@ -32,3 +32,4 @@ int	main(int ac, char **av)
 		return (0);
 	}
 }
+*/
