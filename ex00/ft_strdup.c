@@ -1,22 +1,30 @@
 #include <unistd.h>
 #include <stdlib.h>
-char *ft_strdup(char *src)
+
+char	*ft_strcpy(char *dest, char *src)
 {
-	int		i;
-	char 	*clone;
+	int	i;
 
-	clone = malloc(sizeof(src));
-	if (!clone || !src)
-		return (0);
-		
-	
-
-	while (*src != '\0' && *clone != '\0')
-		*clone++ = *src++
-	*clone = "\0";
-	return (clone);
-
+	i = 0;
+	while (src[i] != '\0')
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }
+
+char	*ft_strdup(char *src)
+{
+	char	*clone;
+
+	clone = (char *) malloc(sizeof(src + 1));
+	if (clone != NULL)
+		ft_strcpy (clone, src);
+	return (clone);
+}
+
 void	ft_putstr(char *str)
 {
 	int	i;
