@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include <stdlib.h>
 
 int	*ft_range(int min, int max)
@@ -7,17 +6,18 @@ int	*ft_range(int min, int max)
 	int	*array;
 
 	if (min > max)
-		return ('\0');
+		return (NULL);
 	array = malloc((max - min + 1) * 4);
 	i = 0;
 	if (!array)
-		return ('\0');
+		return (NULL);
 	while (min < max)
 		array[i++] = min++;
 	array[i] = '\0';
 	return (array);
 }
 /*
+#include <stdio.h>
 int	main(int ac, char **av)
 {
 	int	*p;
