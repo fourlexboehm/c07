@@ -1,22 +1,21 @@
 #include <stdlib.h>
-
 int	*ft_range(int min, int max)
 {
 	int	i;
-	int	*array;
+	int	*range;
 
-	if (min > max)
-		return (NULL);
-	array = malloc((max - min + 1) * 4);
+	if (min >= max)
+		return (0);
+	range = malloc(sizeof(int) * (max - min));
 	i = 0;
-	if (!array)
-		return (NULL);
 	while (min < max)
-		array[i++] = min++;
-	array[i] = '\0';
-	return (array);
+	{
+		range[i] = min;
+		i++;
+		min++;
+	}
+	return (range);
 }
-/*
 #include <stdio.h>
 int	main(int ac, char **av)
 {
@@ -31,5 +30,5 @@ int	main(int ac, char **av)
 			printf("%d\n", p[i++]);
 		return (0);
 	}
+	return (0);
 }
-*/
