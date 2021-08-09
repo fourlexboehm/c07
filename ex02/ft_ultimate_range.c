@@ -22,23 +22,19 @@ int	ft_ultimate_range(int **range, int min, int max)
 	return (length);
 }
 /*
-int	main(int ac, char **av)
+int	main(void)
 {
 	int	i;
-	int length;
-	int **range;
+	int *range;
+	int min = 0;
+	int max = 30;
 	
-	range = NULL;
-
 	i = 0;
-	length = ft_ultimate_range(range, atoi(av[1]), atoi(av[2]));
-	if (ac >= 0)
+	printf("%d\n", ft_ultimate_range(&range, min, max));
+	while (i < max)	
 	{
-		printf("%d\n%d", length, i);
-		while (*range[i++])
-
-			printf("%d\n", range[0][i]);
-//			printf("%d\n", range[0][i++]);
+		printf("%d\n", range[i]);
+		i++;
 	}
 	return (0);
 }
